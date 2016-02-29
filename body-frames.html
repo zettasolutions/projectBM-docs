@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script type="text/javascript" language="javascript" src="js/jquery-1.8.3.min.js"></script>
 		<script type="text/javascript">
 		
 			window.urlTargetPage = null;
@@ -26,7 +25,7 @@
 					treeframe.MenuBuilder.targetContentChanged(path);
 			}
 		
-			$(document).ready(function() {
+			document.onload = function(){
 				if (parent != null) {
 					var link = parent.location.search;
 					if (link != null && link.length > 0) link = link.substr(1);
@@ -36,7 +35,8 @@
 				window.urlTargetPage = link;
 				window.isDocLoaded = true;
 				if (window.onDocLoaded != undefined) window.onDocLoaded();
-			});
+			};
+			
 		</script>
  	
 	<frameset cols="205,*" bordercolor="#a0a0a0" border="3" framespacing="1">
